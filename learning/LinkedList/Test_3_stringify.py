@@ -1,5 +1,5 @@
 import unittest
-from learning.LinkedList.Node_Sandbox import Node
+from Node_Sandbox import Node
 from LinkedList_sandbox import LinkedList
 
 class TestLinkedListStringify(unittest.TestCase):

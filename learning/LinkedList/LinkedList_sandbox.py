@@ -1,6 +1,6 @@
 # Escribe debajo el codigo de la clase LinkedList y sus respectivos metodos     
 # Recuerda importar la clase Node en este script
-from Node_sandbox import Node
+from Node_Sandbox import Node
 class LinkedList:
     def __init__(self, value=None):
         self.head_node = Node(value)
@@ -73,3 +73,29 @@ class LinkedList:
         temp = node1.get_next_node()
         node1.set_next_node(node2.get_next_node())
         node2.set_next_node(temp)
+
+    def invert(self):
+        prev = None
+        current = self.head_node
+
+        while current is not None:
+            next = current.next_node
+            current.next_node = prev
+            prev = current
+            current = next
+        
+        self.head_node = prev
+
+
+
+likend_list = LinkedList()
+
+likend_list.insert_beginning(1)
+likend_list.insert_beginning(2)
+likend_list.insert_beginning(3)
+likend_list.insert_beginning(4)
+likend_list.insert_beginning(5)
+
+print(likend_list.stringify_list())
+likend_list.invert()
+print(likend_list.stringify_list())
