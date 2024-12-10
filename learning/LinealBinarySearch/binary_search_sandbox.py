@@ -1,4 +1,4 @@
-def binary_search(lst, element):
+def binary_search(lst, element): # O(log n)
     low = 0
     high = len(lst) - 1
 

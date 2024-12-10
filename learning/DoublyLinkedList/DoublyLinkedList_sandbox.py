@@ -3,11 +3,11 @@
 import Node_sandbox as Ns
 
 class DoublyLinkedList:
-    def __init__(self, head_node = None, tail_node = None):
+    def __init__(self, head_node = None, tail_node = None): # O(1)
         self.head_node = head_node  
         self.tail_node = tail_node
 
-    def add_to_head(self, new_value):
+    def add_to_head(self, new_value): # O(1)
         new_head = Ns.Node(new_value)
         current_head = self.head_node  
 
@@ -20,7 +20,7 @@ class DoublyLinkedList:
         if self.tail_node is None:
             self.tail_node = new_head
 
-    def add_to_tail(self, new_value):
+    def add_to_tail(self, new_value): # O(1)
         new_tail = Ns.Node(new_value)
         current_tail = self.tail_node
 
@@ -33,7 +33,7 @@ class DoublyLinkedList:
         if self.head_node is None:
             self.head_node = new_tail
 
-    def remove_tail(self):
+    def remove_tail(self): # O(1)
         removed_tail = self.tail_node
 
         if removed_tail is None:
@@ -48,7 +48,7 @@ class DoublyLinkedList:
 
         return removed_tail.get_value()
 
-    def remove_head(self):
+    def remove_head(self): # O(1)
         removed_head = self.head_node
 
         if removed_head is None:
@@ -63,7 +63,7 @@ class DoublyLinkedList:
 
         return removed_head.get_value()
 
-    def remove_by_value(self, value_to_remove):
+    def remove_by_value(self, value_to_remove): # O(N)
         node_to_remove = None
         current_node = self.head_node
         while current_node is not None:

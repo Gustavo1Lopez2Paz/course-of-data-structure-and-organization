@@ -1,4 +1,4 @@
-def sparse_search(data, search_val):
+def sparse_search(data, search_val): # O(log n)
   print("Datos: " + str(data))
   print("Valor de búsqueda: " + str(search_val))
   first = 0

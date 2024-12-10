@@ -2,18 +2,18 @@
 # Recuerda importar la clase Node en este script
 from Node_Sandbox import Node
 class LinkedList:
-    def __init__(self, value=None):
+    def __init__(self, value=None): # O(1)
         self.head_node = Node(value)
 
-    def get_head_node(self):
+    def get_head_node(self): # O(1)
         return self.head_node
 
-    def insert_beginning(self, new_value):
+    def insert_beginning(self, new_value): # O(1)
         new_node = Node(new_value)
         new_node.next_node = self.head_node
         self.head_node = new_node
 
-    def stringify_list(self):
+    def stringify_list(self): # O(N)
         string_list = ""
         current_node = self.head_node
         while current_node is not None:
@@ -22,7 +22,7 @@ class LinkedList:
             current_node = current_node.next_node
         return string_list
 
-    def remove_node(self, value_to_remove):
+    def remove_node(self, value_to_remove): # O(N)
         current_node = self.head_node
         if current_node.get_value() == value_to_remove:
             self.head_node = current_node.get_next_node()  
@@ -33,7 +33,7 @@ class LinkedList:
                 return
             current_node = current_node.get_next_node()
 
-    def swap_nodes(self, val1, val2):
+    def swap_nodes(self, val1, val2): # O(N)
         
         if val1 == val2:
             print("No es posible realizar el intercambio: los valores de los nodos a intercambiar son iguales")
@@ -74,7 +74,7 @@ class LinkedList:
         node1.set_next_node(node2.get_next_node())
         node2.set_next_node(temp)
 
-    def invert(self):
+    def invert(self): # O(N)
         prev = None
         current = self.head_node
 

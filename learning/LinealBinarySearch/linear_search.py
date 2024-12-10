@@ -1,4 +1,4 @@
-def linear_search_v1(search_list, target_value):
+def linear_search_v1(search_list, target_value): # O(N)
     index = 0
     for value in search_list:
         if value == target_value:
@@ -7,7 +7,7 @@ def linear_search_v1(search_list, target_value):
     else:
             raise ValueError("{0} no esta en la lista".format(target_value))
 
-def linear_search_v2(search_list, target_value):
+def linear_search_v2(search_list, target_value): # O(N)
     posiciones = []
     index = 0
     for value in search_list:
@@ -20,7 +20,7 @@ def linear_search_v2(search_list, target_value):
     
     return posiciones
 
-def linear_search_v3(search_list):
+def linear_search_v3(search_list): # O(N)
     max_value = 0
     for value in search_list:
         if value > max_value:
