@@ -26,10 +26,3 @@ def linear_search_v3(search_list): # O(N)
         if value > max_value:
             max_value = value
     return max_value
-
-
-lst1 = [1, 3, 7, 33, 24, 5, 0, 12, 23, 11]
-print(linear_search_v1(lst1, 24))
-lst2 = [1, 3, 7, 33, 24, 5, 0, 12, 23, 11, 24, 0, 21, 3, 2, -32, 24]
-print(linear_search_v2(lst2, 24))
-print(linear_search_v3(lst1))
