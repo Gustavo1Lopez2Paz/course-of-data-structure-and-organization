@@ -1,39 +1,19 @@
 # Agrega el codigo de la funcion nth_last_element() debajo
-from LinkedList_sandbox import LinkedList
+from Node_Sandbox import Node
 
-def nth_last_element(ll, n=None):
-    
-    ll = LinkedList()
+def nth_last_element(linked_list, n):
+    lead = linked_list.get_head_node()
+    follow = linked_list.get_head_node()
 
-    if n is None or n <= 0:
-        return None
-    
-    current_node = ll.get_head_node()
-    length = 0
-    while current_node is not None:
-        length += 1
-        current_node = current_node.get_next_node()
+    # Mover el puntero líder n posiciones adelante
+    for _ in range(n):
+        if lead is None:  # Si n es mayor que la longitud de la lista
+            return None
+        lead = lead.get_next_node()
 
-    if n > length:
-        return None
+    # Mover ambos punteros hasta que el puntero líder llegue al final
+    while lead:
+        lead = lead.get_next_node()
+        follow = follow.get_next_node()
 
-    position_from_start = length - n
-
-    current_node = ll.get_head_node()
-    for _ in range(position_from_start):
-        current_node = current_node.get_next_node()
-
-    return current_node.get_value()
-
-linkedlist = LinkedList()
-linkedlist.insert_beginning(1)
-linkedlist.insert_beginning(2)
-linkedlist.insert_beginning(3)
-linkedlist.insert_beginning(4)
-linkedlist.insert_beginning(5)
-
-print("Lista enlazada:")
-print(linkedlist.stringify_list())
-
-penultimo = nth_last_element(linkedlist, 2)
-print(f"El penúltimo nodo es: {penultimo}")
+    return follow  # El puntero de seguimiento apunta al n-ésimo elemento desde el final

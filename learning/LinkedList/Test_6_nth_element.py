@@ -2,12 +2,12 @@ import unittest
 import start
 if start.from_test():
     print("Running from Dr Javier's code")
-    from learning.LinkedList.Node_Sandbox import Node
+    from Node import Node
     from LinkedList import LinkedList
     from miscellaneous import nth_last_element  
 else:
     print("Running from students' code")
-    from Node_sandbox import Node
+    from Node_Sandbox import Node
     from LinkedList_sandbox import LinkedList
     from miscellaneous_sandbox import nth_last_element  
 
