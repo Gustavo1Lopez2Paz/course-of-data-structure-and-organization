@@ -2,7 +2,7 @@ import unittest
 import start
 if start.from_test():
     print("Running from Dr Javier's code")
-    from learning.LinkedList.Node_Sandbox import Node
+    from Node import Node
     from LinkedList import LinkedList
 else:
     print("Running from students' code")
